@@ -1,45 +1,39 @@
 import React from 'react'
+import Title from '../title'
+import Button from '../button'
+import Input from '../input/input'
 
 const Newsletter = () => {
     return (
-        <div class="subscribe">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="section-heading">
-                            <h2>By Subscribing To Our Newsletter You Can Get 30% Off</h2>
-                            <span>Details to details is what makes Hexashop different from the other themes.</span>
-                        </div>
+        <div className="subscribe">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-8">
+                        <Title title="By Subscribing To Our Newsletter You Can Get 30% Off" description="Details to details is what makes Hexashop different from the other themes." />
                         <form id="subscribe" action="" method="get">
-                            <div class="row">
-                                <div class="col-lg-5">
-                                    <fieldset>
-                                        <input name="name" type="text" id="name" placeholder="Your Name" required="" />
-                                    </fieldset>
+                            <div className="row">
+                                <div className="col-lg-5">
+                                    <Input name="name" id="name" placeholder="Your name" required={true} />
                                 </div>
-                                <div class="col-lg-5">
-                                    <fieldset>
-                                        <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email Address" required="" />
-                                    </fieldset>
+                                <div className="col-lg-5">
+                                    <Input name="email" id="email" placeholder="Your Email Address" pattern="[^ @]*@[^ @]*" required={true} />
                                 </div>
-                                <div class="col-lg-2">
-                                    <fieldset>
-                                        <button type="submit" id="form-submit" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>
-                                    </fieldset>
+                                <div className="col-lg-2">
+                                    <Button type="submit" id="form-submit" />
                                 </div>
                             </div>
                         </form>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="row">
-                            <div class="col-6">
+                    <div className="col-lg-4">
+                        <div className="row">
+                            <div className="col-6">
                                 <ul>
                                     <li>Store Location:<br /><span>Sunny Isles Beach, FL 33160, United States</span></li>
                                     <li>Phone:<br /><span>010-020-0340</span></li>
                                     <li>Office Location:<br /><span>North Miami Beach</span></li>
                                 </ul>
                             </div>
-                            <div class="col-6">
+                            <div className="col-6">
                                 <ul>
                                     <li>Work Hours:<br /><span>07:30 AM - 9:30 PM Daily</span></li>
                                     <li>Email:<br /><span>info@company.com</span></li>

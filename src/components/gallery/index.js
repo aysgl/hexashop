@@ -4,6 +4,31 @@ import Pic2 from "../../assets/images/men-02.jpg"
 import Pic3 from "../../assets/images/men-03.jpg"
 import Pic4 from "../../assets/images/men-01.jpg"
 import OwlCarousel from 'react-owl-carousel';
+import Title from '../title'
+import Rating from '../rating'
+import Action from '../action'
+
+const data = [{
+    id: 1,
+    title: "Classic Spring",
+    price: "120.00",
+    img: Pic1
+}, {
+    id: 2,
+    title: "Air Force 1 X",
+    price: "90.00",
+    img: Pic2
+}, {
+    id: 3,
+    title: "Love Nana ‘20",
+    price: "150.00",
+    img: Pic3
+}, {
+    id: 4,
+    title: "Classic Spring",
+    price: "120.00",
+    img: Pic4
+}]
 
 const Gallery = ({ title, description }) => {
     const options = {
@@ -31,115 +56,37 @@ const Gallery = ({ title, description }) => {
     };
 
     return (
-        <section class="section" id="men">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="section-heading">
-                            <h2>{title}</h2>
-                            <span>{description}</span>
-                        </div>
+        <section className="section" id="men">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-6">
+                        <Title title={title} description={description} />
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="men-item-carousel">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-12">
+                        <div className="men-item-carousel">
                             <OwlCarousel
                                 className="owl-men-item owl-carousel"  {...options}>
-                                <div class="item">
-                                    <div class="thumb">
-                                        <div class="hover-content">
-                                            <ul>
-                                                <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
+                                {data.map((item, index) =>
+                                    <div className="item" key={index}>
+                                        <div className="thumb">
+                                            <div className="hover-content">
+                                                <Action />
+                                            </div>
+                                            <img src={item.img} alt="" />
                                         </div>
-                                        <img src={Pic1} alt="" />
-                                    </div>
-                                    <div class="down-content">
-                                        <h4>Classic Spring</h4>
-                                        <span>$120.00</span>
-                                        <ul class="stars">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="thumb">
-                                        <div class="hover-content">
-                                            <ul>
-                                                <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
+                                        <div className="down-content">
+                                            <div className='d-flex justify-content-between'>
+                                                <h4>{item.title}</h4><Rating number={1} />
+                                            </div>
+                                            <span>${item.price}</span>
+
                                         </div>
-                                        <img src={Pic2} alt="" />
                                     </div>
-                                    <div class="down-content">
-                                        <h4>Air Force 1 X</h4>
-                                        <span>$90.00</span>
-                                        <ul class="stars">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="thumb">
-                                        <div class="hover-content">
-                                            <ul>
-                                                <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <img src={Pic3} alt="" />
-                                    </div>
-                                    <div class="down-content">
-                                        <h4>Love Nana ‘20</h4>
-                                        <span>$150.00</span>
-                                        <ul class="stars">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="thumb">
-                                        <div class="hover-content">
-                                            <ul>
-                                                <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <img src={Pic4} alt="" />
-                                    </div>
-                                    <div class="down-content">
-                                        <h4>Classic Spring</h4>
-                                        <span>$120.00</span>
-                                        <ul class="stars">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                )}
                             </OwlCarousel>
                         </div>
                     </div>

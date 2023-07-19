@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import API from '../../common'
-import { AAText } from '../../common/element/text'
-import Banner from '../../components/banner'
+import Category from '../../components/category'
 import Gallery from '../../components/gallery'
 import ExploreOurProducts from '../../components/exploreourproducts'
-import SocialMedia from '../../components/socialmedia'
+import Instagram from '../../components/instagram'
 import Newsletter from '../../components/newsletter'
 
 function Home() {
-
-
     //ana sayfada ürünleri göstermek için bunu kullanıyorum.
     const [HomeData, setHomeData] = useState([])
 
@@ -59,14 +56,14 @@ function Home() {
 
     return (
         <>
-            <Banner />
+            <Category limit={4} />
             <Gallery title="Men's Latest" description="Details to details is what makes Hexashop different from the other themes." />
             <Gallery title="Women's Latest" description="Details to details is what makes Hexashop different from the other themes." />
             <Gallery title="Kid's Latest" description="Details to details is what makes Hexashop different from the other themes." />
             <ExploreOurProducts />
-            <SocialMedia title="Social Media" description="Details to details is what makes Hexashop different from the other themes." />
+            <Instagram title="Social Media" description="Details to details is what makes Hexashop different from the other themes." />
             <Newsletter />
-            {HomeData.filter(item => item.rating > 4.1).map((item, index) => <RenderItem item={item} key={index} />)}
+            {/* {HomeData.filter(item => item.rating > 4.1).map((item, index) => <RenderItem item={item} key={index} />)} */}
         </>
     )
 }

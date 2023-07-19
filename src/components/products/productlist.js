@@ -3,53 +3,47 @@ import ProductCard from './productcard'
 import Pic1 from '../../assets/images/men-01.jpg'
 import Pic2 from '../../assets/images/men-02.jpg'
 import Pic3 from '../../assets/images/men-03.jpg'
+import Title from '../title'
+import Pagination from '../pagination'
 
-const ProductList = () => {
+const data = [{
+    id: 1,
+    title: "Classic Spring",
+    price: "120.00",
+    img: Pic1,
+    rating: 5
+}, {
+    id: 2,
+    title: "Air Force 1 X",
+    price: "90.00",
+    img: Pic2,
+    rating: 2
+}, {
+    id: 3,
+    title: "Love Nana ‘20",
+    price: "150.00",
+    img: Pic1,
+    rating: 4
+}]
+
+const ProductList = ({ title, description, link }) => {
     return (
-        <section class="section" id="products">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-heading">
-                            <h2>Our Latest Products</h2>
-                            <span>Check out all of our products.</span>
-                        </div>
+        <section className="section" id="products">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-12">
+                        <Title title={title} description={description} />
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <ProductCard title="Classic Spring" price="120.00" image={Pic1} rating="4" />
-                    </div>
-                    <div class="col-lg-4">
-                        <ProductCard title="Air Force 1 X" price="90.00" image={Pic2} rating="2" />
-                    </div>
-                    <div class="col-lg-4">
-                        <ProductCard title="Love Nana ‘20" price="150.00" image={Pic3} rating="3" />
-                    </div>
-
-                    <div class="col-lg-12">
-                        <div class="pagination">
-                            <ul>
-                                <li>
-                                    <a href="#">1</a>
-                                </li>
-                                <li class="active">
-                                    <a href="#">2</a>
-                                </li>
-                                <li>
-                                    <a href="#">3</a>
-                                </li>
-                                <li>
-                                    <a href="#">4</a>
-                                </li>
-                                <li>
-                                    <a href="#"> </a>
-                                </li>
-                            </ul>
+            <div className="container">
+                <div className="row">
+                    {data.map((item, index) =>
+                        <div className="col-lg-4" key={index}>
+                            <ProductCard link={link} title={item.title} price={item.price} image={item.img} rating={item.rating} />
                         </div>
-                    </div>
+                    )}
+                    <Pagination />
                 </div>
             </div>
         </section>
